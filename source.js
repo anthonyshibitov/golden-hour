@@ -24,9 +24,20 @@ function accessLocation(locationPosition){
 }
 
 const sunsetAPI = async () => {
-    const response = await fetch(`https://api.sunrise-sunset.org/json?lat=${locationObj.lat}&lng=${locationObj.long}`);
+    const response = await fetch(`https://api.sunrise-sunset.org/json?lat=${locationObj.lat}&lng=${locationObj.long}&formatted=0`);
 
-    const myJson = await response.json();
+    const geoData = await response.json();
+    //return geoData;
+
     //RESULT IS IN UTC WITHOUT DAYLIGHT SAVINGS
-    console.log(myJson);
+    console.log(geoData);
+
+    //This will convert date fetched from API into current timezone, and formatted
+    const sunsetDate = new Date(geoData.results.sunset);
+    console.log("FETCHED DATE: " + sunsetDate);
+    console.log("SUNSET TIME LOCAL: " + sunsetDate.toLocaleTimeString());
+
+    const sunriseDate = new Date(geoData.results.sunrise);
+    console.log("SUNRISE TIME LOCAL: " + sunriseDate.toLocaleTimeString());
+    
 }
