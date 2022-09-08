@@ -6,11 +6,11 @@ Location based app to calculate the best times to check out the sunset, and take
 
 ### Features
 
-- [ ] Request longitude / latitude from users browser 
+- [X] Request longitude / latitude from users browser 
 
-- [ ] Format and send to https://sunrise-sunset.org/api API to calculates times
+- [X] Format and send to https://sunrise-sunset.org/api API to calculates times
 
-- [ ] Need lat/long to timezone API to calculate how to convert UTC to local, including daylight savings if applicable
+- [X] Need lat/long to timezone API to calculate how to convert UTC to local, including daylight savings if applicable
 
 - [ ] Ensure website is responsive on mobile
 
